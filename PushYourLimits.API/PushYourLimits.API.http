@@ -1,0 +1,6 @@
+@PushYourLimits.API_HostAddress = http://localhost:5286
+
+GET {{PushYourLimits.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
