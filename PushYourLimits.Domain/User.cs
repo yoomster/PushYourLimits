@@ -7,19 +7,22 @@ namespace PushYourLimits.Domain
     {
         public User(
             string email,
-            string password,
+            string password, 
             string name,
             int birthYear
             )
         {
-            if (string.IsNullOrWhiteSpace(email) || !IsValidEmailFormat(email))
+            if (string.IsNullOrWhiteSpace(email) || !HasValidEmailFormat(email))
                 throw new ArgumentException("Email format is incorrect, moet @ bevatten.");
 
             if (string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("Wachtwoord is incorrect, deze moet minstens 6 characters bevatten.");
 
-            if (birthYear > DateTime.Now.Year)
-                throw new ArgumentException("Geboortejaar kan niet hoger zijn dan het huidige jaar.");
+            //if (!HasValidPasswordComplexity(password))
+            //    throw new ArgumentException("Wachtwoord moet minstens 1 hoofdletter, 1 cijfer en 1 speciaal teken bevatten.");
+
+            if ((DateTime.Now.Year - birthYear) < 13)
+                throw new ArgumentException("Je moet minimaal 13 jaar oud zijn.");
 
 
             Email = email;
@@ -27,7 +30,7 @@ namespace PushYourLimits.Domain
             Name = name;
             BirthYear = birthYear;
         }
-        private bool IsValidEmailFormat(string email)
+        private bool HasValidEmailFormat(string email)
         {
             try
             {
@@ -40,9 +43,21 @@ namespace PushYourLimits.Domain
             }
         }
 
+        //private bool HasValidPasswordComplexity(string password)
+        //{
+        //    bool output = false;
+
+        //    //not there yet.. FIX LATER!
+        //    if (password.Contains(@"^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$"))
+        //    {
+        //        output = true;
+        //    }
+
+        //    return output;
+        //}
+
         public int Id { get; init; }
         public string Name { get; init; }
-        public string LastName { get; init; }
         public string Email { get; init; }
         public string Password { get; init; }
         public int BirthYear { get; init; }
