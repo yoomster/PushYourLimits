@@ -6,8 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\PushYourLimits.API\PushYourLimits.API.csproj" />
-    </ItemGroup>
-
 </Project>
