@@ -5,3 +5,4 @@ riderModule.iml
 /_ReSharper.Caches/
 /.vs
 /PushYourLimits.API/Controllers/WeatherForecastController.cs
+/PushYourLimits.Infrastructure/PYLDbContext.cs
