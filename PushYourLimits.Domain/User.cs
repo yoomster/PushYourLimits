@@ -61,6 +61,17 @@ namespace PushYourLimits.Domain
         public string Email { get; init; }
         public string Password { get; init; }
         public int BirthYear { get; init; }
+        public int DailyGoal { get; set; }
 
+
+        public void RegisterActivity()
+        {
+
+        }
+
+        public void GetProgress()
+        {
+
+        }
     }
 }
