@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PYLDbContext>(optionsBuilder => 
 {
-    optionsBuilder.UseSqlServer(builder.Configuration["LocalDbConnectionString"]!);
+    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("LocalDbConnectionString"));
 });
 
 var app = builder.Build();
