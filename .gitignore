@@ -6,3 +6,5 @@ riderModule.iml
 /.vs
 /PushYourLimits.API/Controllers/WeatherForecastController.cs
 /PushYourLimits.Infrastructure/PYLDbContext.cs
+/PushYourLimits.API/appsettings.json
+/docker-compose.yaml
