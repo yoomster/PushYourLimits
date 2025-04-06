@@ -4,9 +4,13 @@ namespace PushYourLimits.Domain
 {
     public class ActivityEntry
     {
+        private ActivityEntry()
+        {
+            
+        }
         public ActivityEntry(
-            ActivityType activityType, 
-            int userId, 
+            ActivityType activityType,
+            int userId,
             DateOnly date,
             TimeOnly startTime,
             TimeOnly endTime
@@ -16,10 +20,10 @@ namespace PushYourLimits.Domain
             {
                 throw new ArgumentException(nameof(activityType));
             }
-  
+
             if (date > DateOnly.FromDateTime(DateTime.Now))
                 throw new ArgumentException("Datum kan niet in de toekomst liggen.");
-            
+
             if (endTime <= startTime)
                 throw new ArgumentException("Eindtijd moet later zijn dan starttijd.");
 
@@ -32,7 +36,7 @@ namespace PushYourLimits.Domain
 
         public int Id { get; init; }
         public int UserId { get; init; }
-        public ActivityType ActivityType { get; init; }
+        public ActivityType ActivityType { get; init; } 
         public DateOnly Date { get; init; }
         public TimeOnly StartTime { get; init; }
         public TimeOnly EndTime { get; init; }
