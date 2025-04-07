@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PushYourLimits.Application.Interfaces;
 using PushYourLimits.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<PYLDbContext>(optionsBuilder =>
 {
     optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("LocalDbConnectionString"));
 });
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
