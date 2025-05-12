@@ -10,6 +10,8 @@ import { createRouter, createWebHistory } from "vue-router/auto";
 import HomeView from "@/views/HomeView.vue";
 import SubscriptionsView from "@/views/SubscriptionsView.vue";
 import LoginView from "@/views/LoginView.vue";
+import GoalSetUp from "@/components/GoalSetUp.vue";
+import Streak from "@/components/ProgressStreak.vue";
 
 const routes = [
   {
@@ -26,6 +28,16 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginView,
+  },
+  {
+    path: "/goalsetup",
+    name: "goalsetup",
+    component: GoalSetUp,
+  },
+  {
+    path: "/streak",
+    name: "streak",
+    component: Streak,
   },
 ];
 

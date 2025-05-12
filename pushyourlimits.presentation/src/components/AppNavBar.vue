@@ -37,6 +37,8 @@
 const items = [
   { title: "Home", route: "/" },
   { title: "Abonnementen", route: "/subscriptions" },
+  { title: "Goal", route: "/goalsetup" },
+  { title: "Streak", route: "/streak" },
 ];
 </script>
 
