@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld />
+  <Homeview />
 </template>
 
 <script setup>

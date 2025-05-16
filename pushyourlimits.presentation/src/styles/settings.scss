@@ -14,3 +14,29 @@
 .text-basil {
   color: #356859 !important;
 }
+
+body {
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.login-btn {
+  color: #356859 !important;
+  border: 1px solid #356859 !important;
+  background-color: white !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+.login-btn:hover {
+  background-color: #f0f0f0 !important;
+}
+.ok-btn,
+.register-btn {
+  background-color: #356859 !important;
+  color: white !important;
+  transition: background-color 0.3s;
+}
+.ok-btn,
+.register-btn:hover {
+  background-color: #2a5247 !important;
+}
