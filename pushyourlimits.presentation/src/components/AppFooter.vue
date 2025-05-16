@@ -35,6 +35,10 @@ const icons = ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"];
 </script>
 
 <style scoped lang="sass">
+v-footer
+  height: 25px
+  flex-shrink: 0
+
 .social-link :deep(.v-icon)
   color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity))
   text-decoration: none

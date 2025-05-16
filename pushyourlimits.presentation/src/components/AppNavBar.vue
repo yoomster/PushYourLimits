@@ -36,8 +36,8 @@
 <script setup>
 const items = [
   { title: "Home", route: "/" },
-  { title: "Abonnementen", route: "/subscriptions" },
-  { title: "Goal", route: "/goalsetup" },
+  // { title: "Abonnementen", route: "/subscriptions" },
+  { title: "Goal", route: "/goal" },
   { title: "Streak", route: "/streak" },
 ];
 </script>
@@ -57,26 +57,8 @@ const items = [
 }
 
 .nav-link-active {
-  border-bottom: 2px solid #356859;
+  border-bottom: 2px solid #6fb98f;
+  color: #6fb98f;
   padding-bottom: 2px;
-}
-
-.login-btn {
-  color: #356859 !important;
-  border: 1px solid #356859 !important;
-  background-color: white !important;
-  transition: background-color 0.3s, color 0.3s;
-}
-.login-btn:hover {
-  background-color: #f0f0f0 !important;
-}
-
-.register-btn {
-  background-color: #356859 !important;
-  color: white !important;
-  transition: background-color 0.3s;
-}
-.register-btn:hover {
-  background-color: #2a5247 !important;
 }
 </style>
