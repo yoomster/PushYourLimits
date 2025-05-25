@@ -10,7 +10,7 @@
     </div>
 
     <div class="mb-6">
-      <h3 class="text-subtitle-1 font-weight-medium orange--text">
+      <h3 class="text-subtitle-1 font-weight-medium basil--text">
         Aantal dagen per week
       </h3>
       <v-slider
@@ -20,16 +20,17 @@
         show-ticks="always"
         step="1"
         tick-size="4"
-        track-color="basil"
-        color="basil"
+        color="green-darken-2"
+        track-fill-color="green-lighten-1"
+        track-background-color="grey-lighten-2"
       />
-      <div class="text-center font-weight-medium mt-2">
+      <div class="text-center font-weight-medium mt-2 orange--text">
         Je kiest voor <strong>{{ days[weekGoal] }}</strong> bewegen per week.
       </div>
     </div>
 
     <div class="mb-6">
-      <h3 class="text-subtitle-1 font-weight-medium orange--text">
+      <h3 class="text-subtitle-1 font-weight-medium basil--text">
         Minuten per actieve dag
       </h3>
       <v-slider
@@ -40,31 +41,27 @@
         show-ticks="always"
         step="10"
         tick-size="4"
-        track-color="basil"
-        color="basil"
+        thumb-label="always grey-lighten-2"
+        color="green-darken-2"
+        track-fill-color="green-lighten-1"
+        track-background-color="grey-lighten-2"
       />
-      <div class="text-center font-weight-medium mt-2">
+      <div class="text-center font-weight-medium mt-2 orange--text">
         Doel: <strong>{{ minutesPerDay }}</strong> minuten bewegen per actieve
         dag.
       </div>
     </div>
 
-    <v-alert
-      type="info"
-      class="text-center mb-6"
-      color="orange-lighten-4"
-      border="start"
-      border-color="orange"
-      icon="mdi-shoe-print"
-      variant="tonal"
-    >
-      Je totale doel is <strong>{{ weekGoal + 1 }} dagen</strong> per week
-      actief te zijn, met telkens
-      <strong>{{ minutesPerDay }} minuten</strong> beweging.
-    </v-alert>
+    <div class="text-center font-weight-medium mt-2 orange--text">
+      <p class="goal-summary text-center my-6 orange--text">
+        Je totale doel is <strong>{{ days[weekGoal] }} </strong> per week actief
+        te zijn, met telkens
+        <strong>{{ minutesPerDay }} minuten</strong> beweging.
+      </p>
+    </div>
 
     <div class="text-center">
-      <v-btn to="/streak" variant="flat" class="ok-btn" type="submit">
+      <v-btn to="/streak" variant="outlined" class="ok-btn me-3" type="submit">
         Opslaan
       </v-btn>
     </div>
@@ -76,12 +73,11 @@ export default {
   data() {
     return {
       weekGoal: 0,
-      minutesPerDay: 0,
+      minutesPerDay: 10,
     };
   },
 };
 </script>
-
 <script setup>
 const days = {
   0: "1 dag",
@@ -99,10 +95,19 @@ const days = {
   color: #356859 !important;
 }
 .orange--text {
-  color: #f4a259 !important;
+  color: #ff983d !important;
 }
 
 .v-slider {
   margin-top: 16px;
+  /* track-color: #356859; */
+  color: #356859;
+}
+.goal-summary {
+  font-size: 1.1rem;
+  background-color: #f4ede6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: inline-block;
 }
 </style>
