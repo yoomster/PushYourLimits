@@ -2,12 +2,9 @@
   <v-app>
     <v-container class="d-flex justify-center mt-10">
       <v-card width="500" class="pa-6" elevation="3" color="white">
-        <!-- Titel -->
         <v-card-title class="justify-center">
           <h1 class="text-h4 font-weight-bold" style="color: #356859">Login</h1>
         </v-card-title>
-
-        <!-- Formulier -->
         <v-card-text>
           <v-form ref="form">
             <v-text-field
@@ -45,11 +42,13 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 const email = ref("");
 const password = ref("");
 const showPassword = ref(false);
 const form = ref();
+const error = ref("");
 
 const router = useRouter();
 
@@ -58,32 +57,18 @@ const rules = {
   email: (v) => /.+@.+\..+/.test(v) || "Vul een geldig e-mailadres in",
 };
 
-const login = () => {
+const login = async () => {
   if (form.value?.validate()) {
-    // Simuleer login
-    console.log("Inloggen met:", email.value, password.value);
-    router.push("/home");
+    try {
+      const response = await axios.post("/IAM/login", {
+        email: email.value,
+        password: password.value,
+      });
+      localStorage.setItem("token", response.data.token);
+      router.push("/home");
+    } catch (err) {
+      error.value = "Login failed";
+    }
   }
 };
 </script>
-
-<style scoped>
-.register-btn {
-  color: #356859 !important;
-  border: 1px solid #356859 !important;
-  background-color: white !important;
-  transition: background-color 0.3s;
-}
-.register-btn:hover {
-  background-color: #f4f4f4 !important;
-}
-
-.login-btn {
-  background-color: #356859 !important;
-  color: white !important;
-  transition: background-color 0.3s;
-}
-.login-btn:hover {
-  background-color: #2a5247 !important;
-}
-</style>

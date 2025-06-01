@@ -8,12 +8,6 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
-.bg-basil {
-  background-color: #fffbe6 !important;
-}
-.text-basil {
-  color: #356859 !important;
-}
 
 body {
   background-color: #f9f9f9;
@@ -21,22 +15,20 @@ body {
   padding: 0;
 }
 
+.ok-btn,
 .login-btn {
-  color: #356859 !important;
-  border: 1px solid #356859 !important;
+  background-color: #fb8836 !important;
+  color: white !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+.register-btn {
+  color: #fb8836 !important;
+  border: 1px solid #fb8836 !important;
   background-color: white !important;
   transition: background-color 0.3s, color 0.3s;
 }
-.login-btn:hover {
-  background-color: #f0f0f0 !important;
-}
-.ok-btn,
-.register-btn {
-  background-color: #356859 !important;
-  color: white !important;
-  transition: background-color 0.3s;
-}
-.ok-btn,
+.ok-btn:hover,
+.login-btn:hover,
 .register-btn:hover {
-  background-color: #2a5247 !important;
+  background-color: #f5b385 !important;
 }

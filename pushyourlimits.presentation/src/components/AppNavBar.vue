@@ -1,11 +1,5 @@
 <template>
   <v-card flat color="white">
-    <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold text-h2" style="color: #356859">
-        PuSh YoUr LiMitS
-      </h1>
-    </v-card-title>
-
     <!-- Navigatiebar -->
     <v-toolbar flat color="white" class="px-6">
       <!-- Links uitgelijnde navigatie -->
